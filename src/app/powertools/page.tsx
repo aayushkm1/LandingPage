@@ -53,9 +53,9 @@ function FigmaToolsPage() {
   ];
 
   return (
-    <div className="figma-tools-container px-4 bg-white lg:p-16 max-w-full">
+    <div className="figma-tools-container px-4 bg-white lg:p-16 max-w-full flex flex-col gap-16">
       {/* Header Section */}
-      <div className="header-section mb-10 lg:mb-16">
+      <div className="header-section ">
         <h1 className="figma-title mb-2">Power Tools for</h1>
         <div className="figma-subtitle-wrapper flex items-center justify-center gap-2">
           <Image 
