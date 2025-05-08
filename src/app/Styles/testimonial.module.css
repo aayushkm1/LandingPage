@@ -1,0 +1,144 @@
+/* /components/styles/testimonials.module.css */
+
+.container {
+    background: white;
+    width: 100%;
+    padding: 4rem 1rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 4rem 5rem;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .container {
+      padding: 4rem 5rem;
+    }
+  }
+  
+  .headingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  
+  .heading {
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -2.0px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .inlineContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 48px;
+      letter-spacing: -2.88px;
+    }
+  }
+  
+  .gradientText {
+    background: linear-gradient(90deg, #466EFB 54.29%, #9B74FD 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -1.8px;
+    display: inline-block;
+    padding-right: 3.5px; /* Ensure exclamation mark doesn't get cut off */
+  }
+  
+  @media (min-width: 768px) {
+    .gradientText {
+      font-size: 48px;
+      letter-spacing: -2.88px;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  @media (min-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .testimonialsSection {
+    margin-top: 2rem;
+  }
+  
+  .testimonialCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .testimonialText {
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 160%;
+  }
+  
+  .testimonialProfile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .profileImage {
+    width: 44px;
+    height: 44px;
+    ;
+    object-fit: cover;
+  }
+  
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profileName {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .profileTitle {
+    font-size: 14px;
+    color: #666;
+  }
