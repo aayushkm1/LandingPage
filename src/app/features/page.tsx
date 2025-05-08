@@ -26,7 +26,7 @@ const getImageSrc = (image: string | StaticImageData): string => {
 
 const Page: React.FC = () => {
   return (
-    <div className="features-container w-full max-w-full bg-white mx-auto px-4 py-12 lg:p-16 flex flex-col gap-16">
+    <div className="features-container w-full max-w-full bg-white mx-auto px-4 py-12 lg:p-16 flex flex-col lg:gap-16">
       {/* Hero Section */}
       <div className="text-center">
         <h1 className="title-hero mb-2">Design Smarter</h1>
