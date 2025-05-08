@@ -1,8 +1,10 @@
-"use client"
+"use client";
 
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { useState } from 'react';
+
+// Import static assets
 import icon from '../../../Assets/Vector (2).svg';
 import bg1 from '../../../Assets/BG (1).png';
 import bg2 from '../../../Assets/BG (2).png';
@@ -11,33 +13,32 @@ import WireFrameGenerator from '../../../Assets/Wireframe Generator.png';
 import ComponentGenerator from '../../../Assets/Component Generator.png';
 import ExportToFigma from '../../../Assets/Export to Figma.png';
 
-import '../Styles/figma-tools.css'; // Ensure you have this CSS file in your styles directory
-// Note: Import the CSS in your layout.js or global CSS file 
-// import '@/styles/figma-tools.css';
+import '../powertools/figma-tools.css';
 
-export default function FigmaToolsPage() {
+function FigmaToolsPage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+  // Card data
   const cards = [
     {
       id: 1,
       bg: bg1,
       image: WireFrameGenerator,
       icon: '👁️',
-      stats: '900+ users',
+      stats: '800+ users',
       feature: 'Supports Multi-page Flows',
       title: 'Wireframe Generator',
-      description: 'Turn your ideas into wireframes – just describe what you want, well handle the layout.'
+      description: 'Turn your ideas into wireframes – just describe what you need. We\'ll handle the layout.'
     },
     {
       id: 2,
       bg: bg2,
       image: ComponentGenerator,
       icon: '🔄',
-      stats: '2.3k+ users',
+      stats: '24.3k+ users',
       feature: 'Built-in Auto Layout',
       title: 'Component Generator',
-      description: 'Generate responsive UI components in seconds, perfect for when you\'re on the go. We\'ll build it for you.'
+      description: 'Generate responsive UI components in seconds. Just type what you need – we\'ll build it for you.'
     },
     {
       id: 3,
@@ -52,8 +53,9 @@ export default function FigmaToolsPage() {
   ];
 
   return (
-    <div className="figma-tools-container mx-auto px-4 bg-white py-16 max-w-full">
-      <div className="header-section mb-16">
+    <div className="figma-tools-container px-4 bg-white lg:p-16 max-w-full">
+      {/* Header Section */}
+      <div className="header-section mb-10 lg:mb-16">
         <h1 className="figma-title mb-2">Power Tools for</h1>
         <div className="figma-subtitle-wrapper flex items-center justify-center gap-2">
           <Image 
@@ -67,6 +69,7 @@ export default function FigmaToolsPage() {
         </div>
       </div>
 
+      {/* Cards Container */}
       <div className="cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div 
@@ -75,48 +78,53 @@ export default function FigmaToolsPage() {
             onMouseEnter={() => setHoveredCard(card.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <div className="card-image-container relative h-48">
+            {/* Card Image Container */}
+            <div className="card-image-container relative">
               <Image 
                 src={card.bg} 
                 alt="Background" 
-                layout="fill" 
-                objectFit="cover" 
-                className="card-bg"
+                fill
+                sizes="(max-width: 768px) 358px, 411px"
+                className="card-bg object-cover"
               />
-              <div className="image-overlay absolute inset-0 flex items-center justify-center">
+              <div className="card-image-wrapper">
                 <Image 
                   src={card.image} 
                   alt={card.title} 
-                  width={180} 
-                  height={180} 
+                  width={320}
+                  height={280}
                   className="card-tool-image"
                 />
               </div>
             </div>
 
-            <div className="card-content p-6">
-              <div className="card-stats-row flex items-center justify-between mb-2">
-                <div className="stats-badge flex items-center gap-1 text-gray-600 text-sm">
-                  <span>{card.icon}</span>
-                  <span>{card.stats}</span>
+            {/* Card Content */}
+            <div className="card-content lg:p-[20px]">
+              <div className="flex items-center mb-4 gap-2 flex-wrap">
+                <div className="rounded-md bg-gray-100 flex items-center justify-center stats-badge">
+                  <span className="mr-1">{card.icon}</span>
+                  <span className="text-xs font-medium text-gray-600">{card.stats}</span>
                 </div>
-                <div className="feature-badge text-sm text-gray-600">
-                  {card.feature}
+                
+                <div className="rounded-md bg-gray-100 flex items-center justify-center feature-badge">
+                  <span className="text-xs font-medium text-gray-600">{card.feature}</span>
                 </div>
               </div>
 
-              <h3 className="card-title text-xl font-bold mb-2">{card.title}</h3>
-              <p className="card-description text-gray-600 mb-4">
+              <h3 className="card-title">{card.title}</h3>
+              <p className="card-description">
                 {card.description}
               </p>
 
               <div className="try-button-container">
                 <a 
                   href="#" 
-                  className={`try-button flex items-center text-blue-600 font-medium ${hoveredCard === card.id ? 'text-blue-700' : ''}`}
+                  className="flex items-center text-blue-600 font-medium"
                 >
                   Try in Figma
-                  <FaArrowRight className={`ml-2 transition-transform ${hoveredCard === card.id ? 'translate-x-1' : ''}`} />
+                  <span className="ml-2 inline-block transform rotate-315">
+                    <FaArrowRight />
+                  </span>
                 </a>
               </div>
             </div>
@@ -126,3 +134,5 @@ export default function FigmaToolsPage() {
     </div>
   );
 }
+
+export default FigmaToolsPage;

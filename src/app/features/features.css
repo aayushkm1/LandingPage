@@ -1,0 +1,176 @@
+/* Typography styles */
+.features-container {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.title-hero {
+  color: #000;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -2.88px;
+}
+
+/* Gradient text styles */
+.gradient-text {
+  background: linear-gradient(90deg, #CE79FE 72.23%, #266BFA 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "DM Sans", sans-serif;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 120%;
+  padding-right: 6px;
+  letter-spacing: -2.88px;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card styles */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 411px;
+  transition: all 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-8px);
+
+}
+
+.card-image-container {
+  width: 100%;
+  height: 278px;
+  overflow: hidden;
+  background-color: #f5f2ff;
+}
+
+.framer-card-image {
+  background-color: #f7f7f7;
+}
+
+.coming-soon-text {
+  color: #666;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.card-content {
+  background: #FFF;
+  padding: 20px;
+  height: 152px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (min-width: 769px) {
+  .card-container {
+    width: 411px;
+  }
+  
+  .card-image-container {
+    height: 278px;
+  }
+  
+  .card-content {
+    height: 152px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    padding-top: 40px;
+  }
+  
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .title-hero,
+  .gradient-text {
+    font-size: 36px;
+    letter-spacing: -2px;
+  }
+  
+  .card-container {
+    width: 358px;
+  }
+  
+  .card-image-container {
+    height: 195px;
+  }
+  
+  .card-content {
+    height: 152px;
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .card-description {
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .stats-badge, .feature-badge {
+    height: 16px;
+    width: 100px;
+  }
+  
+  .stats-badge span, .feature-badge span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-hero {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+  
+  .gradient-text {
+    font-size: 28px;
+    letter-spacing: -1.5px;
+  }
+  
+  .card-container {
+    width: 100%;
+    max-width: 358px;
+  }
+}

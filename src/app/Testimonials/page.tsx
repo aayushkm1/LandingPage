@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import styles from '../Styles/testimonial.module.css';
+import styles from '../Testimonials/testimonial.module.css';
 import TestimonialCard from './TestimonialCard';
 import StarIcon from './StarIcon';
 import Image1 from '../../../Assets/Rectangle 74 (1).jpg'
