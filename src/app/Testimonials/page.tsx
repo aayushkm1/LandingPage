@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import styles from '../Styles/testimonial.module.css';
 import TestimonialCard from './TestimonialCard';
